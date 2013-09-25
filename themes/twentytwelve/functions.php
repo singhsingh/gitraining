@@ -1,4 +1,8 @@
 <?php
+if ( !is_user_logged_in() && !is_admin() && !!in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')) ) {
+	wp_redirect('http://localhost/github/?page_id=2', 301);
+	exit;
+}
 /**
  * Twenty Twelve functions and definitions.
  *
